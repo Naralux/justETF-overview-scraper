@@ -37,7 +37,7 @@ if __name__ == "__main__":
     response = requests.get(url, headers=HEADERS, timeout=30)
 
     if response.status_code != 200:
-        print("Failed to access site '%s' with error: %s", url, response.status_code)
+        print("Failed to access site '%s' with error: %s" % (url, response.status_code))
 
     soup = BeautifulSoup(response.text, "lxml")
 
