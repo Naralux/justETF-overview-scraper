@@ -2,7 +2,7 @@
 Simple scraper which can be used to scrape justETF's complete ETF overview (https://www.justetf.com/en/etf-list-overview.html).
 Build for personal use. I have no intention of actively maintaining this.
 # Installation
-I'd recommened using a virtual environment:
+I'd recommened using a virtual environment and activating it before installing dependencies (see Python's [Virtual Environments and Packages docs](https://docs.python.org/3/tutorial/venv.html "Python3 venv docs")):
 ```
 python -m venv venv
 ```
