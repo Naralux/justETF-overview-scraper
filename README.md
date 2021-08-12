@@ -15,5 +15,6 @@ Simply run `main.py` from the command line:
 ```
 python .\src\main.py
 ```
+Optionally the `--output` (`-o`) can be passed in to specify a filename.
 # Notes
 This is my first web scraper, first time using Python and the first time using Beautifulsoup4. Therefor the code won't be as clean or efficient as it could/should be. I'm always open to feedback, tips & tricks!
