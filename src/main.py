@@ -1,6 +1,9 @@
-from typing import Final, Dict
 import re
 import json
+import argparse
+import os
+from datetime import datetime
+from typing import Final, Dict
 
 import requests
 from bs4 import BeautifulSoup
@@ -20,6 +23,16 @@ HEADERS: Final[Dict[str, str]] = {
 }
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--output",
+        "-o",
+        type=str,
+        help="Where to write the results to",
+        default=os.path.join("", "output.json")
+    )
+    args = parser.parse_args()
+
     url = "https://www.justetf.com/en/etf-list-overview.html"
     response = requests.get(url, headers=HEADERS, timeout=30)
 
@@ -50,4 +63,8 @@ if __name__ == "__main__":
     for inner_list in raw_data_list:
         for item in inner_list:
             etfs[item['wkn']] = item
+    
+    print("Writing results to %s" % args.output)
+    with open(args.output, "w") as f:
+        json.dump(etfs, f, ensure_ascii=False)
     
