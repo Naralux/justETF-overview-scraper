@@ -58,7 +58,7 @@ if __name__ == "__main__":
         closing_bracket_pos = content.find("]") + 1
         raw_data_list.append(json.loads(content[opening_bracket_pos:closing_bracket_pos]))
 
-    # List of list of dictionaries to single dictionary with ticker as key
+    # List of list of dictionaries to dict of dicts with ticker as key
     etfs = {}
     for inner_list in raw_data_list:
         for item in inner_list:
